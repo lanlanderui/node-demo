@@ -19,11 +19,16 @@ var server = http.createServer(function(request,response){
     // console.log('查到字符串为\n'+query)
     // console.log('不含查询字符串的路径为\n'+pathNoQuery)
     if(path == '/'){
-        response.write('hihihi')
-        response.end()
-    }else if(path == '/index') {
         response.setHeader('Content-Type','text/html;charset=utf-8')
-        response.write('<!DOCTYPE>\n<html><head></head><body><h1 style="color:red">Hello Nodejs</h1><P>你好</P></body></html>')
+        response.write('<!DOCTYPE>\n<html><head><link rel="stylesheet" href="style.css"><script type="text/javascript" src="main.js"></script></head><body><h1>Hello Node.js</h1><P>你好</P></body></html>')
+        response.end()
+    }else if(path == '/style.css') {
+        response.setHeader('Content-Type','text/css;charset=utf-8')
+        response.write('body {background-color: pink;}h1{color: blue;}')
+        response.end()
+    }else if(path == '/main.js') {
+        response.setHeader('Content-Type','text/javescript;charset=utf-8')
+        response.write('alert("这是js")')
         response.end()
     }
     else{
