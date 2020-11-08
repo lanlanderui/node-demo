@@ -30,7 +30,7 @@ var server = http.createServer(function(request,response){
         response.statusCode = 404
         response.end()
     }
-    //ha ha 
+    //怎样分别描述提交呢
     
 }) 
 server.listen(port)
